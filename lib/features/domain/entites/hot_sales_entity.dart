@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 //создаем класс исходя из ответа сервера
 class HotSalesEntity extends Equatable{
   final int id;
-  final bool isNew;
+  final isNew;
   final String title;
   final String subTitle;
   final String picture;
