@@ -1,4 +1,5 @@
 import 'package:architecture/core/error/failure.dart';
+import 'package:architecture/features/domain/entites/hot_sales_entity.dart';
 import 'package:architecture/features/presentation/cubit/hot_sales_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,8 +17,17 @@ class HotSalesCubit extends Cubit<HotSalesState> {
 
     final failureOrHotSales = await getAllHotSales();
 
+    final currentState = state;
+
+    // var oldHotSales = <HotSalesEntity>[];
+    // if(currentState is HotSalesLoaded) {
+    //   oldHotSales = currentState.hotSalesList;
+    // }
+    
+    // emit(HotSalesLoading(oldHotSales));
+    
     failureOrHotSales.fold((error) => HotSalesError(message: _mapFailureToMessage(error)), (character) {
-      if(state is HotSalesLoading) {
+      if(currentState is HotSalesLoaded) {
         final hotSales = (state as HotSalesLoading).oldHotSalesList;
         hotSales.addAll(character);
         emit(HotSalesLoaded(hotSales));
