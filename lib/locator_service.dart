@@ -24,38 +24,38 @@ Future<void> init() async {
   //Cubit
   
   sl.registerFactory(() => HotSalesCubit(getAllHotSales: sl()));
-  // sl.registerFactory(() => BestSellerCubit(getAllBestSeller: sl()));
+  sl.registerFactory(() => BestSellerCubit(getBestSeller: sl()));
 
   //UseCases
   
   sl.registerLazySingleton(() => GetAllHotSales(sl()));
-  // sl.registerLazySingleton(() => GetAllBestSeller(sl()));
+  sl.registerLazySingleton(() => GetAllBestSeller(sl()));
   
   //Repository
   sl.registerLazySingleton<HotSalesRepository>(() => HotSalesRepositoryImpl(
       networkInfo: sl(),
       localDataSources: sl(),
-      remoteDataSurce: sl()
+      remoteDataSource: sl()
   ));
-  // sl.registerLazySingleton<BestSellerRepository>(() => BestSellerRepositoryImpl(
-  //     networkInfo: sl(),
-  //     localDataSources: sl(),
-  //     remoteDataSources: sl()
-  // ));
+  sl.registerLazySingleton<BestSellerRepository>(() => BestSellerRepositoryImpl(
+      networkInfo: sl(),
+      localDataSources: sl(),
+      remoteDataSources: sl()
+  ));
   
   sl.registerLazySingleton<HotSalesRemoteDataSurce>(() => HotSalesRemoteDataSourceImpl(
       client: http.Client(),
   ));
-  // sl.registerLazySingleton<BestSellerRemoteDataSources>(() => BestSellerRemoteDataSourcesImpl(
-  //   client: http.Client(),
-  // ));
+  sl.registerLazySingleton<BestSellerRemoteDataSources>(() => BestSellerRemoteDataSourcesImpl(
+    client: http.Client(),
+  ));
   
   sl.registerLazySingleton<HotSalesLocalDataSources>(() => HotSalesLocalDataSourceImpl(
       sharedPreferences: sl()
   ));
-  // sl.registerLazySingleton<BestSellerLocalDataSources>(() => BestSellerLocalDataSourceImpl(
-  //     sharedPreferences: sl()
-  // ));
+  sl.registerLazySingleton<BestSellerLocalDataSources>(() => BestSellerLocalDataSourceImpl(
+      sharedPreferences: sl()
+  ));
   
   //Core
   

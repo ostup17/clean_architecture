@@ -15,6 +15,7 @@ class HotSalesModel extends HotSalesEntity{
     subTitle: subTitle,
     picture: picture
   );
+
   factory HotSalesModel.fromJson(Map<String, dynamic> json) {
     return HotSalesModel(
         id: json['id'],

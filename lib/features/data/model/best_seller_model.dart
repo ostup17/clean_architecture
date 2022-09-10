@@ -19,8 +19,8 @@ class BestSellerModel extends BestSellerEntity{
     return BestSellerModel(
         id: json['id'],
         title: json['title'],
-        priceWithoutDiscount: json['priceWithoutDiscount'],
-        discountPrice: json['discountPrice'],
+        priceWithoutDiscount: json['price_without_discount'],
+        discountPrice: json['discount_price'],
         picture: json['picture']
     );
   }

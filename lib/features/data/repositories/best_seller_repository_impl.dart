@@ -18,7 +18,6 @@ class BestSellerRepositoryImpl implements BestSellerRepository {
     required this.remoteDataSources
   });
 
-
   @override
   Future<Either<Failure, List<BestSellerEntity>>> getAllBestSeller() async {
     if(await networkInfo.isConnects) {

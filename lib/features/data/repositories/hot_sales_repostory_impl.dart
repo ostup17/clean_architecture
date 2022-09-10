@@ -8,27 +8,26 @@ import 'package:architecture/features/domain/repositories/hot_sales_repository.d
 import 'package:dartz/dartz.dart';
 
 class HotSalesRepositoryImpl implements HotSalesRepository {
-  final HotSalesRemoteDataSurce remoteDataSurce;
+  final HotSalesRemoteDataSurce remoteDataSource;
   final HotSalesLocalDataSources localDataSources;
   final NetworkInfo networkInfo;
 
 HotSalesRepositoryImpl({
   required this.networkInfo,
   required this.localDataSources,
-  required this.remoteDataSurce
+  required this.remoteDataSource
 });
 
   @override
   Future<Either<Failure, List<HotSalesEntity>>> getAllHotSales() async {
     if(await networkInfo.isConnects) {
       try {
-        final remoteHotSales = await remoteDataSurce.getAllHotSales();
+        final remoteHotSales = await remoteDataSource.getAllHotSales();
         localDataSources.getHotSalesToCache(remoteHotSales);
         return Right(remoteHotSales);
       } on ServerException {
         return Left(ServerFailure());
       }
-
     } else {
       try {
         final locationHotSales = await localDataSources.getLastHotSalesFromCash();

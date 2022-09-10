@@ -1,6 +1,5 @@
 import 'package:architecture/features/data/config.dart';
 import 'package:architecture/features/data/model/best_seller_model.dart';
-import 'package:architecture/features/data/model/hot_sales_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
