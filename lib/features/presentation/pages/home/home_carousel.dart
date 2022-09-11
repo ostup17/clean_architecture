@@ -19,8 +19,8 @@ class Carousel extends StatelessWidget {
       providers: [
         BlocProvider<HotSalesCubit>(create: (context) => sl<HotSalesCubit>()..loadHotSales()),
       ],
-      child: MaterialApp(
-        home: CarouselBuild(),
+      child: Scaffold(
+        body: CarouselBuild(),
       ),
     );
   }

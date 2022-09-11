@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../locator_service.dart';
-import 'favorite.dart';
+import '../../../../locator_service.dart';
+import '../../widgets/home_favorite.dart';
 
 
 class Catalog extends StatelessWidget {
@@ -17,14 +17,16 @@ class Catalog extends StatelessWidget {
       providers: [
         BlocProvider<BestSellerCubit>(create: (context) => sl<BestSellerCubit>()..loadBestSeller())
       ],
-      child: MaterialApp(
-        home: CatalogBuild(),
+      child: const Scaffold(
+        body: CatalogBuild(),
       ),
     );
   }
 }
 
 class CatalogBuild extends StatelessWidget {
+  const CatalogBuild({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return  BlocBuilder<BestSellerCubit, BestSellerState>(
@@ -189,7 +191,7 @@ class CatalogBuild extends StatelessWidget {
     );
   }
   Widget _loadingIndicator() {
-    return Padding(padding: const EdgeInsets.all(8),
+    return const Padding(padding: EdgeInsets.all(8),
       child: Center(
         child: CircularProgressIndicator(),
       ),

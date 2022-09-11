@@ -1,10 +1,10 @@
 import 'package:architecture/features/data/config.dart';
-import 'package:architecture/features/presentation/widgets/catalog.dart';
-import 'package:architecture/features/presentation/widgets/header.dart';
+import 'package:architecture/features/presentation/pages/home/home_catalog.dart';
+import 'package:architecture/features/presentation/pages/home/home_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../../widgets/home_descriprion_header.dart';
-import 'carousel.dart';
+import 'home_carousel.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -117,7 +117,6 @@ class _HomePageState extends State<HomePage> {
                                               top: BorderSide(
                                                   color: Colors.grey, width: 0.5))),
                                       child: TabBarView(children: <Widget>[
-
                                         Catalog(),
                                         Container(
                                           child: const Center(
@@ -158,7 +157,9 @@ class _HomePageState extends State<HomePage> {
                   ],
                 )
             )
-        )
+        ),
+        extendBody: true,
+        // bottomNavigationBar: Footer()
     );
   }
   Widget Tabs(String header, String iconName, int index) {
