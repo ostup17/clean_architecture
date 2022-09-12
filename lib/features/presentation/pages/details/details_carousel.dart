@@ -18,14 +18,7 @@ import '../../../domain/entites/details_entity.dart';
 class CarouselDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<HotSalesCubit>(create: (context) => sl<HotSalesCubit>()..loadHotSales()),
-      ],
-      child: Scaffold(
-        body: CarouselBuild(),
-      ),
-    );
+    return CarouselBuild();
   }
 }
 
@@ -41,11 +34,6 @@ class CarouselBuild extends StatelessWidget {
           } else if(state is DetailsLoaded) {
             details = state.detailList;
           }
-          print(1233);
-          print('asdasd');
-          print(1233);
-          print('qqqqq');
-          print('Data in List View Builder $details');
           return CarouselSlider.builder(
             itemCount: details[0].images.length,
             carouselController: buttonCarouselController,
@@ -59,7 +47,7 @@ class CarouselBuild extends StatelessWidget {
                       color: Colors.white),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
-                    child: Image.network(details[itemIndex].images.toString()),
+                    child: Image.network(details[0].images[itemIndex]),
                   ),
                 ),
             options: CarouselOptions(

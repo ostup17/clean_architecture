@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:architecture/core/error/exception.dart';
 import 'package:architecture/features/data/config.dart';
 import 'package:architecture/features/data/model/hot_sales_model.dart';

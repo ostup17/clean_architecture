@@ -23,8 +23,10 @@ class DetailsRemoteDataSorceImpl implements DetailsRemoteDataSorce {
         headers: {'Content-Type': 'application/json'}
     );
     if(response.statusCode == 200) {
-      final details = json.decode(response.body);
-      return (details as List).map((e) => DetailsModel.fromJson(e)).toList();
+      List<DetailsModel> result =[];
+      DetailsModel detail = DetailsModel.fromJson(json.decode(response.body));
+      result.add(detail);
+      return result;
     } else {
       throw ServerException();
     }

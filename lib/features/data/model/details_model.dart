@@ -37,9 +37,9 @@ class DetailsModel extends DetailsEntity {
         sd: json['sd'],
         ssd: json['ssd'],
         title: json['title'],
-        capacity: json['capacity'],
-        color: json['color'],
-        images: json['images']
+        capacity: json['capacity'].cast<String>(),
+        color: json['color'].cast<String>(),
+        images: json['images'].cast<String>()
     );
   }
 

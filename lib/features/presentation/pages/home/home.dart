@@ -117,7 +117,11 @@ class _HomePageState extends State<HomePage> {
                                               top: BorderSide(
                                                   color: Colors.grey, width: 0.5))),
                                       child: TabBarView(children: <Widget>[
-                                        Catalog(),
+                                        Container(
+                                          child: Catalog(),
+                                          color: configColors.bgHome,
+                                          margin: EdgeInsets.only(bottom: 22),
+                                        ),
                                         Container(
                                           child: const Center(
                                             child: Text('Display Tab 2',

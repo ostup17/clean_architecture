@@ -17,8 +17,9 @@ class Catalog extends StatelessWidget {
       providers: [
         BlocProvider<BestSellerCubit>(create: (context) => sl<BestSellerCubit>()..loadBestSeller())
       ],
-      child: const Scaffold(
-        body: CatalogBuild(),
+      child: Scaffold(
+        backgroundColor: configColors.bgHome,
+        body: const CatalogBuild(),
       ),
     );
   }
@@ -69,9 +70,7 @@ class CatalogBuild extends StatelessWidget {
                                     width: 187,
                                     height: 168,
                                     margin:
-                                    const EdgeInsets
-                                        .only(
-                                        top: 5),
+                                    const EdgeInsets.only(top: 5),
                                     child: Image.network(
                                       bestSeller[
                                         index].picture),

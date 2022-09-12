@@ -1,5 +1,6 @@
 import 'package:architecture/features/data/config.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Header extends StatelessWidget {
   const Header({Key? key}) : super(key: key);
@@ -40,7 +41,8 @@ class Header extends StatelessWidget {
         ),
         IconButton(
             onPressed: () {
-              _filterModalBottomSheet(context);
+              context.go('/cart');
+              // _filterModalBottomSheet(context);
             },
             icon: Image.asset('assets/image/vector.png'))
       ],

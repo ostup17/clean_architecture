@@ -199,13 +199,13 @@ class _DetailsBodyState extends State<DetailsBody> {
                                                                         BorderRadius
                                                                             .circular(
                                                                             50),
-                                                                        color: HexColor(details[index].color.toString())),
+                                                                        color: HexColor(details[0].color[index])),
                                                                     child: Icon(
                                                                       Icons.check,
                                                                       color: selectedIndexColor ==
                                                                           index
                                                                           ? Colors.white
-                                                                          : HexColor(details[index].color.toString())),
+                                                                          : HexColor(details[0].color[index])),
                                                                     ),
                                                                   ),
                                                                 const SizedBox(
@@ -249,7 +249,7 @@ class _DetailsBodyState extends State<DetailsBody> {
                                                                         Alignment
                                                                             .center,
                                                                         child: Text(
-                                                                          details[index].capacity.toString(),
+                                                                          details[0].capacity[index],
                                                                           style:
                                                                           TextStyle(
                                                                             color: selectedIndexSsd ==
@@ -301,7 +301,7 @@ class _DetailsBodyState extends State<DetailsBody> {
                                                                 FontWeight.w700),
                                                           ),
                                                           Text(
-                                                            '\$${details[5]}',
+                                                            '\$${details[0].price}',
                                                             style: const TextStyle(
                                                                 color: Colors.white,
                                                                 fontFamily: "Mark-Pro",

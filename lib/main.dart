@@ -2,6 +2,7 @@ import 'package:architecture/features/presentation/pages/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:architecture/locator_service.dart' as di;
+import 'features/presentation/pages/cart/cart.dart';
 import 'features/presentation/pages/details/details.dart';
 import 'features/presentation/pages/splash_screen/splash.dart';
 
@@ -43,10 +44,10 @@ class App extends StatelessWidget {
         path: '/Details',
         builder: (BuildContext context, GoRouterState state) => Details(),
       ),
-      // GoRoute(
-      //   path: '/cart',
-      //   builder: (BuildContext context, GoRouterState state) => Cart(),
-      // ),
+      GoRoute(
+        path: '/cart',
+        builder: (BuildContext context, GoRouterState state) => Cart(),
+      ),
     ],
   );
 }
