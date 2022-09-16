@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../../widgets/home_descriprion_header.dart';
 import 'home_carousel.dart';
+import 'home_footer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -118,9 +119,9 @@ class _HomePageState extends State<HomePage> {
                                                   color: Colors.grey, width: 0.5))),
                                       child: TabBarView(children: <Widget>[
                                         Container(
-                                          child: Catalog(),
                                           color: configColors.bgHome,
                                           margin: EdgeInsets.only(bottom: 22),
+                                          child: Catalog(),
                                         ),
                                         Container(
                                           child: const Center(
@@ -163,7 +164,7 @@ class _HomePageState extends State<HomePage> {
             )
         ),
         extendBody: true,
-        // bottomNavigationBar: Footer()
+        bottomNavigationBar: const Footer()
     );
   }
   Widget Tabs(String header, String iconName, int index) {

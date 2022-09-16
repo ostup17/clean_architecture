@@ -1,5 +1,4 @@
 import 'package:architecture/features/domain/entites/cart_entity.dart';
-import 'package:architecture/features/domain/entites/hot_sales_entity.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class CartState extends Equatable {

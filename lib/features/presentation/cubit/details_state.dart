@@ -1,3 +1,4 @@
+import 'package:architecture/features/domain/entites/cart_entity.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../domain/entites/details_entity.dart';
